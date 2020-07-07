@@ -8,6 +8,8 @@ app.get('/foo/:id', (req, res) => {
     eval('console.log("something", ' + req.params.id + ')');
     // #2
     eval('console.log("something else", ' + req.params.id + ')');
+    // #3
+    eval(`console.log("something else", ${req.params.id})`);
     res.send(`Hello ${req.params.id}`)
 })
 
