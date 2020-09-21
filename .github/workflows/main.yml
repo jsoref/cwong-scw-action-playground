@@ -12,6 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: testing
+        uses: cwong-scw/test-action@v1
+        with:
+          milliseconds: 1000
+
       # Import SARIF to GitHub Security Code Scanning
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
