@@ -15,10 +15,11 @@ jobs:
       - name: testing
         uses: cwong-scw/test-action@v1
         with:
-          milliseconds: 1000
+          inputSarifFile: sarif/output.sarif
+          outputSarifFile: sarif/processed.sarif
 
       # Import SARIF to GitHub Security Code Scanning
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: sarif/output.sarif
+          sarif_file: sarif/processed.sarif
