@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "Tool Name 3",
+          "name": "Tool Name 5",
           "rules": [
             {
               "id": "TEST01",
