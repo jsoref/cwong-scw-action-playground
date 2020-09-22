@@ -34,7 +34,7 @@
           "ruleId": "TEST01",
           "level": "error",
           "message": {
-            "text": "Result text 001. This result does not have a rule associated."
+            "text": "Result text 002. This result does not have a rule associated."
           },
           "locations": [
             {
@@ -51,7 +51,7 @@
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "39fa2ee980eb94b1:1"
+            "primaryLocationLineHash": "39fa2ee980eb94b2:1"
           }
         },
         {
