@@ -16,7 +16,7 @@
                 }
               },
               "shortDescription": {
-                "text": "Failed to release dynamic memory."
+                "text": "Failed to release dynamic memory, but not really because this is CWE 89. Yes really."
               },
               "fullDescription": {
                 "text": "Unused variables, imports, functions or classes may be a symptom of a bug and should be examined carefully."
@@ -34,7 +34,7 @@
           "ruleId": "TEST01",
           "level": "error",
           "message": {
-            "text": "Result text 002. This result does not have a rule associated."
+            "text": "Result text 003. This result does not have a rule associated."
           },
           "locations": [
             {
