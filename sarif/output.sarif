@@ -22,8 +22,7 @@
                 "text": "Unused variables, imports, functions or classes may be a symptom of a bug and should be examined carefully."
               },
               "help": {
-                "text": "some help text",
-                "markdown": "markdown version some link [here](https://github.com)"
+                "text": "some help text"
               }
             },
             {
@@ -35,12 +34,13 @@
                 }
               },
               "shortDescription": {
-                "text": "blah blah\na there is a cWe-352 vulnerability\nhow about that"
+                "text": "blah blah\na there is a cWe-352 vulnerability\nhow about that CWE9999"
               },
               "fullDescription": {
-                "text": "something something cwe89 something CWE: 79 and something else"
+                "text": "something something cwe89 something CWE: 79 and\nsomething else cwe-----352 again"
               },
               "help": {
+                "text": "Some text here some text here",
                 "markdown": "# A Heading\n\nSome text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here\n\n## A Smaller Heading\n\nMore text here more text here more text here more text here more text here more text here CWE_94 more text here more text here"
               }
             }
