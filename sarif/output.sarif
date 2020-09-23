@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "Tool Name 5",
+          "name": "Tool Name 7",
           "rules": [
             {
               "id": "TEST01",
@@ -24,6 +24,24 @@
               "help": {
                 "text": "some help text",
                 "markdown": "markdown version some link [here](https://github.com)"
+              }
+            },
+            {
+              "id": "TEST02",
+              "name": "Test 02 rule name",
+              "messageStrings": {
+                "default": {
+                  "text": "aaa"
+                }
+              },
+              "shortDescription": {
+                "text": "blah blah\na there is a cWe-352 vulnerability\nhow about that"
+              },
+              "fullDescription": {
+                "text": "something something cwe89 something CWE: 79 and something else"
+              },
+              "help": {
+                "markdown": "# A Heading\n\nSome text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here\n\n## A Smaller Heading\n\nMore text here more text here more text here more text here more text here more text here CWE_94 more text here more text here"
               }
             }
           ]
@@ -55,8 +73,8 @@
           }
         },
         {
-          "ruleId": "TEST01",
-          "level": "note",
+          "ruleId": "TEST02",
+          "level": "warning",
           "message": {
             "text": "more different text."
           },
@@ -75,7 +93,7 @@
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "39fa2ee980eb94d0:1"
+            "primaryLocationLineHash": "39fa2ee98bebd4d0:1"
           }
         }
       ]
