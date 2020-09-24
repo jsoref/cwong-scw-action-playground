@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "Tool Name 7",
+          "name": "ACME Source Code Scanner",
           "rules": [
             {
               "id": "TEST01",
@@ -69,7 +69,7 @@
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "39fa2ee980eb94b2:1"
+            "primaryLocationLineHash": "39fa2ee980eb94b3:1"
           }
         },
         {
@@ -93,7 +93,7 @@
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "39fa2ee98bebd4d0:1"
+            "primaryLocationLineHash": "39fa2ee98bebd4d1:1"
           }
         }
       ]
