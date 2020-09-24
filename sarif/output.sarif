@@ -8,8 +8,8 @@
           "name": "ACME Source Code Scanner",
           "rules": [
             {
-              "id": "TEST01",
-              "name": "Test 01 rule name",
+              "id": "TEST01 cwe 613",
+              "name": "Test 01 rule CWE_425 name",
               "messageStrings": {
                 "default": {
                   "text": "This is the message text. It might be very long."
