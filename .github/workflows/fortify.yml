@@ -1,7 +1,7 @@
 name: Import Fortify SARIF
 on:
   push:
-    branches: [ master, v1 ]
+    branches: [ master ]
       
 jobs:                                                  
   Import-Forfity-SARIF:
