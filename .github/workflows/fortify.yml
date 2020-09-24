@@ -1,0 +1,30 @@
+name: Import Fortify SARIF
+on:
+  push:
+    branches: [ master, v1 ]
+      
+jobs:                                                  
+  Import-Forfity-SARIF:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Results
+        uses: fortify/gha-fod-generate-sarif@master
+        with:
+          base-url: https://ams.fortify.com/
+          tenant: ${{ secrets.FOD_TENANT }}
+          user: ${{ secrets.FOD_USER }}
+          password: ${{ secrets.FOD_PAT }}
+          release-id: ${{ secrets.FOD_RELEASE_ID }}
+          output: sarif/output.sarif
+
+      - name: Add SCW Training
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+        with:
+          inputSarifFile: sarif/output.sarif
+          outputSarifFile: sarif/processed.sarif
+
+      - name: Import Results
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: sarif/processed.sarif
