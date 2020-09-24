@@ -11,7 +11,7 @@ jobs:
       - name: Download Results
         uses: fortify/gha-fod-generate-sarif@master
         with:
-          base-url: https://api.ams.fortify.com
+          base-url: https://api.trial.fortify.com
           tenant: ${{ secrets.FOD_TENANT }}
           user: ${{ secrets.FOD_USER }}
           password: ${{ secrets.FOD_PAT }}
