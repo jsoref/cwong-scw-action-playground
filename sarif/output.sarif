@@ -41,7 +41,7 @@
               },
               "help": {
                 "text": "Some text here some text here",
-                "markdown": "# A Heading\n\nSome text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here\n\n## A Smaller Heading\n\nMore text here more text here more text here more text here more text here more text here CWE_94 more text here more text here"
+                "markdown": "Where does the first line go?\n\n# Heading 1\n\nSome text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here\n\n## A Smaller Heading\n\nMore text here more text here more text here more text here more text here more text here CWE_94 more text here more text here\n\n### Heading 3\n\nMore text here"
               }
             }
           ]
