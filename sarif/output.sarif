@@ -34,14 +34,14 @@
                 }
               },
               "shortDescription": {
-                "text": "blah blah\na there is a cWe-352 vulnerability\nhow about that CWE9999"
+                "text": "Code injection"
               },
               "fullDescription": {
-                "text": "something something cwe89 something CWE: 79 and\nsomething else cwe-----352 again"
+                "text": "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution."
               },
               "help": {
                 "text": "Some text here some text here",
-                "markdown": "Where does the first line go?\n\n# Heading 1\n\nSome text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here some text here\n\n## A Smaller Heading\n\nMore text here more text here more text here more text here more text here more text here CWE_94 more text here more text here\n\n### Heading 3\n\nMore text here"
+                "markdown": "Directly evaluating user input (for example, an HTTP request parameter) as code without properly sanitizing the input first allows an attacker arbitrary code execution. This can occur when user input is treated as JavaScript, or passed to a framework which interprets it as an expression to be evaluated. Examples include AngularJS expressions or JQuery selectors.\n\n## Recommendation\n\nAvoid including user input in any expression which may be dynamically evaluated. If user input must be included, use context-specific escaping before including it. It is important that the correct escaping is used for the type of evaluation that will occur.\n\n## Example\n\nThe following example shows part of the page URL being evaluated as JavaScript code. This allows an attacker to provide JavaScript within the URL. If an attacker can persuade a user to click on a link to such a URL, the attacker can evaluate arbitrary JavaScript in the browser of the user to, for example, steal cookies containing session information.\n\n```\neval(document.location.href.substring(document.location.href.indexOf(\"default=\")+8))\n```\n\n## References\n\n* OWASP: [Code Injection](https://www.owasp.org/index.php/Code_Injection).\n* Wikipedia: [Code Injection](https://en.wikipedia.org/wiki/Code_injection).\n* Common Weakness Enumeration: [CWE-94](https://cwe.mitre.org/data/definitions/94.html).\n* Common Weakness Enumeration: [CWE-79](https://cwe.mitre.org/data/definitions/79.html).\n* Common Weakness Enumeration: [CWE-116](https://cwe.mitre.org/data/definitions/116.html)."
               }
             }
           ]
@@ -50,7 +50,7 @@
       "results": [
         {
           "ruleId": "TEST01",
-          "level": "error",
+          "level": "warning",
           "message": {
             "text": "Result text 003. This result does not have a rule associated."
           },
@@ -74,9 +74,9 @@
         },
         {
           "ruleId": "TEST02",
-          "level": "warning",
+          "level": "error",
           "message": {
-            "text": "more different text."
+            "text": "User-provided value flows to here and is interpreted as code."
           },
           "locations": [
             {
@@ -85,9 +85,9 @@
                   "uri": "app.js"
                 },
                 "region": {
-                  "startLine": 15,
+                  "startLine": 14,
                   "startColumn": 5,
-                  "endColumn": 8
+                  "endColumn": 57
                 }
               }
             }
