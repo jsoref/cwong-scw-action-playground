@@ -23,6 +23,14 @@
               },
               "help": {
                 "text": "some help text"
+              },
+              "properties": {
+                "tags": [
+                  "AAA",
+                  "BBB",
+                  "CWE: 22",
+                  "DDD"
+                ]
               }
             },
             {
