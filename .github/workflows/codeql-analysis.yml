@@ -50,9 +50,16 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       
-    - name: Get SARIF
-      run: ls -l && echo "----" && ls -l ../results && echo "----" && cat ../results/*.sarif
-    
-    - name: Get Config
-      run: echo $RUNNER_TEMP && echo "----" && cat $RUNNER_TEMP/config && echo "----"
+    - name: Get 1st SARIF
+      run: cat $RUNNER_TEMP/config | sed -E 's/{\"languages\":\[\"([^"]*).*/\1/'
 
+    - name: Add Secure Code Warrior contextual training to SARIF
+      uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+      with:
+        inputSarifFile: ./results.sarif
+        outputSarifFile: ./results.processed.sarif
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: ./results.processed.sarif
