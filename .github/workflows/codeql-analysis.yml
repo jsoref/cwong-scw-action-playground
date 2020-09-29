@@ -51,7 +51,7 @@ jobs:
     #  uses: github/codeql-action/analyze@v1
       
     - name: Get 1st SARIF
-      run: cat $RUNNER_TEMP/config | sed -E 's/\{\"languages\"\:\[\"([^"]+)\".*/\1/'
+      run: cat ../results/`cat $RUNNER_TEMP/config | sed -E 's/\{\"languages\"\:\[\"([^"]+)\".*/\1/'`-builtin.sarif
 
     - name: Add Secure Code Warrior contextual training to SARIF
       uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
