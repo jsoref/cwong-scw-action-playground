@@ -52,4 +52,7 @@ jobs:
       
     - name: Get SARIF
       run: ls -l && echo "----" && ls -l ../results && echo "----" && cat ../results/*.sarif
+    
+    - name: Get Config
+      run: echo $RUNNER_TEMP && echo "----" && cat $RUNNER_TEMP/config && echo "----"
 
