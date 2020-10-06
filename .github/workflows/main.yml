@@ -16,6 +16,7 @@ jobs:
         with:
           inputSarifFile: sarif/output.sarif
           outputSarifFile: sarif/processed.sarif
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
