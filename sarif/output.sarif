@@ -125,7 +125,7 @@
         },
         {
           "ruleId": "TEST03",
-          "level": "info",
+          "level": "note",
           "message": {
             "text": "blargh blargh blargh"
           },
