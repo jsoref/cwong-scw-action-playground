@@ -122,6 +122,30 @@
           "partialFingerprints": {
             "primaryLocationLineHash": "39fa2ee98bebd4d1:1"
           }
+        },
+        {
+          "ruleId": "TEST03",
+          "level": "info",
+          "message": {
+            "text": "blargh blargh blargh"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 5,
+                  "endColumn": 57
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "39fa2eed8bebd4d1:1"
+          }
         }
       ]
     }
