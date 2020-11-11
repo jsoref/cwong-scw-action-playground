@@ -41,5 +41,5 @@ jobs:
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: sarif/processed.sarif
+          sarif_file: processed-sarifs
 
