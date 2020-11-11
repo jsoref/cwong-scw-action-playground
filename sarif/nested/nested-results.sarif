@@ -1,0 +1,153 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "ACME Source Code Scanner",
+          "rules": [
+            {
+              "id": "TEST01 cwe 613",
+              "name": "Test 01 rule CWE_425 name",
+              "messageStrings": {
+                "default": {
+                  "text": "This is the message text. It might be very long."
+                }
+              },
+              "shortDescription": {
+                "text": "Failed to release dynamic memory, but not really because this is CWE 89. Yes really."
+              },
+              "fullDescription": {
+                "text": "Unused variables, imports, functions or classes may be a symptom of a bug and should be examined carefully."
+              },
+              "help": {
+                "text": "some help text"
+              },
+              "properties": {
+                "tags": [
+                  "AAA",
+                  "BBB",
+                  "CWE: 22",
+                  "DDD"
+                ]
+              }
+            },
+            {
+              "id": "TEST02",
+              "name": "Test 02 rule name",
+              "messageStrings": {
+                "default": {
+                  "text": "aaa"
+                }
+              },
+              "shortDescription": {
+                "text": "Code injection"
+              },
+              "fullDescription": {
+                "text": "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution."
+              },
+              "help": {
+                "text": "Some text here some text here",
+                "markdown": "Directly evaluating user input (for example, an HTTP request parameter) as code without properly sanitizing the input first allows an attacker arbitrary code execution. This can occur when user input is treated as JavaScript, or passed to a framework which interprets it as an expression to be evaluated. Examples include AngularJS expressions or JQuery selectors.\n\n## Recommendation\n\nAvoid including user input in any expression which may be dynamically evaluated. If user input must be included, use context-specific escaping before including it. It is important that the correct escaping is used for the type of evaluation that will occur.\n\n## Example\n\nThe following example shows part of the page URL being evaluated as JavaScript code. This allows an attacker to provide JavaScript within the URL. If an attacker can persuade a user to click on a link to such a URL, the attacker can evaluate arbitrary JavaScript in the browser of the user to, for example, steal cookies containing session information.\n\n```javascript\neval(document.location.href.substring(document.location.href.indexOf(\"default=\")+8))\n```\n\n## References\n\n* OWASP: [Code Injection](https://www.owasp.org/index.php/Code_Injection).\n* Wikipedia: [Code Injection](https://en.wikipedia.org/wiki/Code_injection).\n* Common Weakness Enumeration: [CWE-94](https://cwe.mitre.org/data/definitions/94.html).\n* Common Weakness Enumeration: [CWE-79](https://cwe.mitre.org/data/definitions/79.html).\n* Common Weakness Enumeration: [CWE-116](https://cwe.mitre.org/data/definitions/116.html)."
+              }
+            },
+            {
+              "id": "TEST03",
+              "name": "Test 03 rule name",
+              "messageStrings": {
+                "default": {
+                  "text": "aaa"
+                }
+              },
+              "shortDescription": {
+                "text": "SQLi somewhere"
+              },
+              "fullDescription": {
+                "text": "This issue has come up again and there are both CSRF and Ssrf in the app"
+              },
+              "help": {
+                "text": "Some text here some text here",
+                "markdown": "How could this be? A Use-After-Free vuln in Java? Directly evaluating user input (for example, an HTTP request parameter) as code without properly sanitizing the input first allows an attacker arbitrary code execution. This can occur when user input is treated as JavaScript, or passed to a framework which interprets it as an expression to be evaluated. Examples include AngularJS expressions or JQuery selectors.\n\n## Recommendation\n\nAvoid including user input in any expression which may be dynamically evaluated. If user input must be included, use context-specific escaping before including it. It is important that the correct escaping is used for the type of evaluation that will occur.\n\n## Example\n\nThe following example shows part of the page URL being evaluated as JavaScript code. This allows an attacker to provide JavaScript within the URL. If an attacker can persuade a user to click on a link to such a URL, the attacker can evaluate arbitrary JavaScript in the browser of the user to, for example, steal cookies containing session information.\n\n```javascript\neval(document.location.href.substring(document.location.href.indexOf(\"default=\")+8))\n```\n\n## References\n\n* OWASP: [Code Injection](https://www.owasp.org/index.php/Code_Injection).\n* Wikipedia: [Code Injection](https://en.wikipedia.org/wiki/Code_injection).\n* Common Weakness Enumeration: [CWE-94](https://cwe.mitre.org/data/definitions/94.html).\n* Common Weakness Enumeration: [CWE-79](https://cwe.mitre.org/data/definitions/79.html).\n* Common Weakness Enumeration: [CWE-116](https://cwe.mitre.org/data/definitions/116.html)."
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "TEST01 cwe 613",
+          "level": "warning",
+          "message": {
+            "text": "Result text 003. This result does not have a rule associated."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.js"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 3,
+                  "endColumn": 9
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "39fa2ee980eb94b3:1"
+          }
+        },
+        {
+          "ruleId": "TEST02",
+          "level": "error",
+          "message": {
+            "text": "User-provided value flows to here and is interpreted as code."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.js"
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 5,
+                  "endColumn": 57
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "39fa2ee98bebd4d1:1"
+          }
+        },
+        {
+          "ruleId": "TEST03",
+          "level": "note",
+          "message": {
+            "text": "blargh blargh blargh"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.js"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 5,
+                  "endColumn": 57
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "39fa2eed8bebd4d1:1"
+          }
+        }
+      ]
+    }
+  ]
+}

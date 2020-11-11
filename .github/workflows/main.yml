@@ -2,8 +2,8 @@ name: Import SARIF
 on:
   push:
     branches: [ master, v1 ]
-      
-jobs:                                                  
+
+jobs:
   Import-SARIF:
     runs-on: ubuntu-latest
 
@@ -11,12 +11,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Add SCW Training
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@add-phrase-support
+      - name: Add SCW Training (single file)
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
         with:
           inputSarifFile: sarif/output.sarif
           outputSarifFile: sarif/processed.sarif
-          githubToken: ${{ secrets.GITHUB_TOKEN }} 
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ls some stuff 1
+        run: ls -l ../results
+
+      - name: Add SCW Training (glob)
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
+        with:
+          inputSarifFile: sarif/**/*.json
+          outputSarifFile: processed-sarifs
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ls some stuff 2
+        run: ls -l processed-sarifs
+
+      - name: Add SCW Training (dir)
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
+        with:
+          inputSarifFile: sarif/output.sarif
+          outputSarifFile: processed-sarifs
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ls some stuff 3
+        run: ls -l processed-sarifs
 
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
