@@ -31,7 +31,7 @@ jobs:
       - name: Add SCW Training (dir)
         uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
         with:
-          inputSarifFile: sarif/output.sarif
+          inputSarifFile: sarif/
           outputSarifFile: processed-sarifs
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
