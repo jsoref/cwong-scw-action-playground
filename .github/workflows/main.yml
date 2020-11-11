@@ -18,9 +18,6 @@ jobs:
           outputSarifFile: sarif/processed.sarif
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ls some stuff 1
-        run: ls -l ../results
-
       - name: Add SCW Training (glob)
         uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
         with:
