@@ -57,7 +57,7 @@ jobs:
       run: ls -l ../results
 
     - name: Add Secure Code Warrior contextual training to SARIF
-      uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+      uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@directory-support
       with:
         inputSarifFile: ../results
         outputSarifFile: processed-sarifs
