@@ -49,6 +49,8 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+      with:
+        upload: false
 
     - name: ls some stuff 2
       run: pwd && ls -l ..
@@ -66,7 +68,7 @@ jobs:
     - name: show files
       run: ls -l processed-sarifs && echo "--------" && cat processed-sarifs/1.sarif
 
-    #- name: Upload SARIF file
-    #  uses: github/codeql-action/upload-sarif@v1
-    #  with:
-    #    sarif_file: processed-sarifs
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: processed-sarifs
