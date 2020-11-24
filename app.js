@@ -16,7 +16,7 @@ app.get('/foo/:id', (req, res) => {
     eval(`console.log("yet another one ${req.params.id}")`);
     // #6
     eval(`console.log("blah blahhhzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz ${req.params.id}")`);
-    res.send(`Hello ${req.params.id}`)
+    res.send(`Hello ${req.params.id} and ${req.params.name}`);
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
