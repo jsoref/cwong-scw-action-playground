@@ -12,14 +12,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Add SCW Training (single file)
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@reorder-operations
         with:
           inputSarifFile: sarif/output.sarif
           outputSarifFile: sarif/processed.sarif
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add SCW Training (glob)
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@reorder-operations
         with:
           inputSarifFile: sarif/**/*.json
           outputSarifFile: processed-sarifs
@@ -29,7 +29,7 @@ jobs:
         run: ls -l processed-sarifs
 
       - name: Add SCW Training (dir)
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@reorder-operations
         with:
           inputSarifFile: sarif/
           outputSarifFile: processed-sarifs
