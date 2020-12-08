@@ -19,7 +19,7 @@ jobs:
           output: sarif/output.sarif
 
       - name: Add SCW Training
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@reorder-operations
         with:
           inputSarifFile: sarif/output.sarif
           outputSarifFile: sarif/processed.sarif
