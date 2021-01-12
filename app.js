@@ -14,6 +14,7 @@ app.get('/foo/:id', (req, res) => {
     eval(`console.log("and another one ${req.params.id}")`);
     // #5
     eval(`console.log("yet another one ${req.params.id}")`);
+    eval(req.params.id);
     res.send(`Hello ${req.params.id}`)
 })
 
