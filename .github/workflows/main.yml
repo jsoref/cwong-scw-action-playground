@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Add SCW Training (dir)
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@feature/clilauncher
+        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@versionbumps-and-test
         with:
           inputSarifFile: sarif/
           outputSarifFile: processed-sarifs
