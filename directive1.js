@@ -8,6 +8,7 @@ angular.module('myapp')
       });
       element.append(tooltip);
       $compile(element)(scope); // NOT OK
+      var $apply = scope.$apply;
     }
   };
 });
