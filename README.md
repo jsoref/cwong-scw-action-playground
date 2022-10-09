@@ -6,6 +6,7 @@ This document describes the public code scanning REST API, and does not address 
 2. `/analyses`
 3. `/alerts`
 
+
 ## Upload a SARIF file `/sarifs`
 
 `POST /repositories/:repository_id/code-scanning/sarifs`
